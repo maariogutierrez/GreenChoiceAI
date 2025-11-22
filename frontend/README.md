@@ -9,61 +9,59 @@
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green?style=flat&logo=nodedotjs&logoColor=white)
 ![Demo](https://img.shields.io/badge/Status-Demo-orange?style=flat)
 
-Este directorio contiene la aplicación frontend desarrollada con React + Vite para el proyecto GreenChoice (reto COTEC — IndesIAhack).
+This directory contains the frontend application built with React + Vite for the GreenChoice project.
 
-La interfaz proporciona una experiencia conversacional donde el usuario puede interactuar con un asistente que sugiere decisiones más sostenibles. El diseño sigue patrones familiares de chatbots (p. ej. ChatGPT) para minimizar la curva de aprendizaje.
+The interface provides a conversational experience where users interact with an assistant that suggests more sustainable decisions. The design follows common chatbot patterns (e.g. ChatGPT) to minimize the learning curve.
 
-Nota: esta es una DEMO — algunos botones y opciones están deshabilitados intencionadamente.
+Note: this is a DEMO — some buttons and options are intentionally disabled.
+---
+
+## Table of contents
+
+- 📦 [Requirements](#requirements)
+- ⚙️ [Install & Run (development)](#install--run-development)
+- 🚀 [Build for production](#build-for-production)
+- ☁️ [Suggested deployment](#suggested-deployment)
 
 ---
 
-## Tabla de contenidos
+## Requirements
 
-- 📦 [Requisitos](#requisitos)
-- ⚙️ [Instalación y ejecución](#instalaci%C3%B3n-y-ejecuci%C3%B3n-desarrollo)
-- 🚀 [Construcción para producción](#construcci%C3%B3n-para-producci%C3%B3n)
-- ☁️ [Despliegue sugerido](#despliegue-sugerido)
+- Node.js 18+ (or the version you use in your development environment)
+- npm or pnpm/yarn
 
-
----
-
-## Requisitos
-
-- Node.js 18+ (o la versión que uses en tu entorno de desarrollo)
-- npm o pnpm/yarn
-
-Recomendación: usa Node 18+ para evitar incompatibilidades con dependencias modernas.
+Recommendation: use Node 18+ to avoid incompatibilities with modern dependencies.
 
 ---
 
-## Instalación y ejecución (desarrollo)
+## Install & Run (development)
 
-1. Instala dependencias:
+1. Install dependencies:
 
 ```bash
 cd frontend
 npm install
 ```
 
-2. Arranca en modo desarrollo:
+2. Start the dev server:
 
 ```bash
 npm run dev
 ```
 
-Abre el navegador en la URL que indique Vite (por defecto http://localhost:5173).
+Open your browser at the URL Vite reports (default: http://localhost:5173).
 
-Consejo: si usas pnpm o yarn, reemplaza `npm install` por `pnpm install` o `yarn`.
+Tip: if you use pnpm or yarn, replace `npm install` with `pnpm install` or `yarn`.
 
 ---
 
-## Construcción para producción
+## Build for production
 
 ```bash
 npm run build
 ```
 
-El resultado quedará en la carpeta `dist`. Para previsualizar localmente:
+The output folder is `dist`. To preview the production build locally:
 
 ```bash
 npm run preview
@@ -71,8 +69,8 @@ npm run preview
 
 ---
 
-## Despliegue sugerido
+## Suggested deployment
 
-- Hosts estáticos: Vercel, Netlify, Cloudflare Pages o cualquier servicio que sirva contenido estático desde `dist`.
-- Recomendación para CI: en GitHub Actions instala dependencias, ejecuta `npm run build` y publica `dist` al hosting.
+- Static hosts: Vercel, Netlify, Cloudflare Pages, or any service that serves static content from `dist`.
+- CI recommendation: in GitHub Actions install dependencies, run `npm run build`, and publish `dist` to your hosting provider.
 

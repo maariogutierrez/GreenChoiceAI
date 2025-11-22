@@ -3,7 +3,7 @@
 
 Project that routes multiple-choice and open questions to the most cost-efficient LLM depending on predicted category and heuristic difficulty. It includes a FastAPI backend (`api.py`), a Vite + React frontend (`frontend/`), and an on-disk sentence embedder plus an SVM classifier for category prediction (`embedder/` and a `clasificador_svm.pkl` file expected at repository root).
 
-**Authors:** Mario Gutiérrez, Jorge Martínez, Jose María Martín, Inés García
+**Authors:** Jorge Martínez, Jose María Martín, Inés García and Mario Gutiérrez.
 
 **Quick summary:** The backend computes a difficulty score from the input question (and optional answer choices), predicts a category using sentence embeddings + an SVM classifier, then selects the cheapest model that meets a minimum accuracy threshold (based on `tasa_aciertos.csv`). The selected LLM is queried and its final answer returned to the frontend.
 

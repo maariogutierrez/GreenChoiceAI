@@ -1,0 +1,45 @@
+.chat-header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  justify-content: flex-start; 
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+}
+
+.chat-header-right {
+	margin-left: 8px; 
+}
+
+
+.chat-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark-green, #125711);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.chat-version {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a6b57;
+  margin-left: 8px;
+}
+
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: rgba(0,0,0,0.04);
+  color: rgb(126, 130, 141);
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.06);
+}

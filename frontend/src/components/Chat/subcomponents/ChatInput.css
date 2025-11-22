@@ -1,0 +1,103 @@
+/* Minimal chat input: icons fixed size, input flexes to fill remaining space */
+.chatbot-input-area {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white, #fff);
+  border-radius: 24px;
+  padding: 6px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.input-button,
+.send-button {
+  flex: 0 0 40px; /* fixed size icons/buttons */
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  border-radius: 17px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.send-button {
+  background: var(--green, #3b82f6);
+  color: white;
+}
+
+.send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Hover states for buttons */
+.input-button:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.send-button:hover:not(:disabled) {
+  background: var(--blue);
+  transform: translateY(-1px);
+}
+
+/* Focus styles: visible ring for keyboard users and focus-within for the container */
+.input-container:focus-within {
+  box-shadow: 0 4px 18px rgba(59,130,246,0.12);
+  border-color: rgba(59,130,246,0.28);
+}
+
+.chatbot-input {
+  flex: 1 1 auto;
+  min-height: 40px;
+  max-height: 200px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+  line-height: 1.4;
+  background: transparent;
+  color: inherit;
+  padding: 6px 8px;
+}
+
+.input-container .icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 420px) {
+  .input-button, .send-button { width: 36px; height: 36px; flex: 0 0 36px; }
+  .input-container { padding: 4px; border-radius: 20px; }
+}
+
+/* Optional: keep a sticky utility class if parent applies it */
+.chatbot-input-area.sticky {
+  position: sticky;
+  bottom: 0;
+  padding: 8px;
+  background: transparent;
+}
+
+.extra-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.choice-input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  font-size: 13px;
+}

@@ -1,0 +1,51 @@
+:root {
+  /* typography */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* color tokens (keep and extend) */
+  --white: #ffffff;
+  --cream: #fdf3d8;
+  --orange: #eaa11b;
+  --blue: #47b8e1;
+  --gray: #b1b4ab;
+  --green: #7cc700;
+  --dark-green: #125711;
+  --gradient-background: linear-gradient(180deg, #fffcf4 0%, #fff9ea 100%);
+  --gradient-green: linear-gradient(90deg, #7cc700, #35b801);
+
+}
+
+/* make layout sizing easier: include padding/border in width/height calculations */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cream);
+  color: var(--dark-green);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+  height: 100%;
+}

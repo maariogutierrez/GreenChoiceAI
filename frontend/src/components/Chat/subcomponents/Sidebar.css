@@ -1,0 +1,166 @@
+.sidebar {
+    --sidebar-width: 72px;
+    --sidebar-open-width: 140px;
+    --accent-rgb: 59,130,246;
+    --text-rgb: 17,24,39;
+
+    flex: 0 0 var(--sidebar-width);
+    overflow: hidden;
+    transition: flex 0.24s ease, width 0.24s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--gradient-background);
+    border-right: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 2px 0 8px rgba(12,40,20,0.03);
+    z-index: 15;
+}
+
+.sidebar.open {
+    flex: 0 0 var(--sidebar-open-width);
+}
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding-top: 12px;
+}
+
+.sidebar-logo {
+    padding: 0;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.sidebar-logo img {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+    
+
+.sidebar-logo-btn {
+    background: transparent;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: center;
+    margin-top: 6px;
+}
+
+/* Profile area at the bottom: keep it pinned, center contents and add spacing */
+.sidebar-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 12px; /* space from the very bottom */
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: transparent;
+    border: none;
+    color: rgb(var(--text-rgb));
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0.28rem 0.5rem;
+    width: 100%;
+    text-align: left;
+    border-radius: 6px;
+    transition: background-color 0.12s ease;
+    justify-content: center;
+}
+
+.sidebar-item span {
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-left: 0; 
+    opacity: 0;
+    transition: max-width 180ms ease, opacity 160ms ease, margin-left 160ms ease;
+}
+
+.sidebar.open .sidebar-menu span,
+.sidebar.open .sidebar-item span {
+    max-width: 140px; 
+    opacity: 1;
+    margin-left: 8px;
+}
+
+.sidebar.open .sidebar-item {
+    justify-content: flex-start;
+    padding-left: 0.6rem;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(0,0,0,0.04);
+}
+
+.sidebar-item img {
+    width: 18px;
+    height: 18px;
+}
+    
+
+.profile-btn {
+    background: transparent;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.profile-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 8px; /* visual gap below the avatar */
+}
+
+.profile-menu {
+    position: fixed;
+    left: calc(var(--sidebar-width) + 12px);
+    bottom: 16px;
+    min-width: 180px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1200;
+}
+
+.profile-menu-item {
+    padding: 8px;
+    font-size: 12px;
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-menu-item:hover {
+    background: rgba(var(--accent-rgb), 0.06);
+    color: rgb(var(--accent-rgb));
+}

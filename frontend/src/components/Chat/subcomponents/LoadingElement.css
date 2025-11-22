@@ -1,0 +1,15 @@
+
+.loading-text {
+    color: #7cc700;
+    font-size: 14px;
+    transform-origin: center;
+    display: inline-block;
+    /* subtle pulsing scale */
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}

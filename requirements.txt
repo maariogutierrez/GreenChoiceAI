@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+textstat
+pandas
+sentence-transformers
+joblib
+openai
+requests
+scikit-learn
+pydantic

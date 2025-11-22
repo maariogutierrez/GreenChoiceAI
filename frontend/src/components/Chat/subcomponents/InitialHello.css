@@ -1,0 +1,28 @@
+.initial-hello {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+}
+
+.initial-hello-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.initial-hello-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.initial-hello-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--dark-green, #125711);
+}
+
+.initial-hello-sub {
+  font-size: 20px;
+  color: #4b6b57;
+}

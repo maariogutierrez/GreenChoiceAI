@@ -1,0 +1,64 @@
+/* Layout container: sidebar + main as flex siblings */
+.chat-layout {
+	display: flex;
+	min-height: 100vh;
+}
+
+
+/* Main content grows to fill available space */
+main {
+	flex: 1 1 auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: var(--gradient-background);
+}
+
+
+.chat-container {
+	flex: 1 1 auto;
+	width: 100%;
+	max-width: 1100px; /* constrain content for readable line lengths */
+	margin: 0 auto; /* center horizontally */
+	padding-top: 16px;
+	padding-bottom: 45px;
+	padding-left: clamp(16px, 6vw, 48px);
+	padding-right: clamp(16px, 6vw, 48px);
+	display: flex;
+	flex-direction: column;
+	background: transparent;
+}
+
+/* Empty state: center greeting + input vertically/horizontally */
+.chat-container.empty {
+	justify-content: center;
+	align-items: center;
+}
+
+.initial-center {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	width: 100%;
+}
+
+.center-input-wrapper {
+	width: min(780px, 100%);
+	padding: 0 12px;
+}
+
+/* make the input form look centered and constrained */
+.chatbot-input-area.centered {
+	width: 100%;
+	display: block;
+}
+.chatbot-input-area.centered .input-container {
+	max-width: 780px;
+	margin: 0 auto;
+}
+
+/* ensure when there are messages the input sits at the bottom area */
+.bottom-input-wrapper {
+	margin-top: auto; /* push it to the bottom of the flex column */
+}

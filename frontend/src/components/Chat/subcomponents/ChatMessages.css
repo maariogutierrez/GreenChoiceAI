@@ -1,0 +1,94 @@
+.chatbot-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0; /* allow flex children to shrink inside containers */
+}
+
+.chatbot-messages {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chatbot-message {
+  max-width: 74%;
+  padding: 10px 14px;
+
+  line-height: 1.45;
+
+  word-break: break-word;
+}
+
+/* user messages: narrower, right-aligned, subtle gray background (input-like) */
+.chatbot-message.user {
+  margin-left: auto;
+  max-width: 58%; /* user bubbles slightly narrower */
+  background: #f3f4f6; /* light gray */
+  color: rgb(53, 62, 82);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(12, 40, 20, 0.05);
+  text-align: right;
+  font-size: 14px;
+}
+
+/* assistant messages: left-aligned, normal/comfortable reading size */
+.chatbot-message.assistant {
+  margin-right: auto;
+  max-width: 76%;
+  background: rgba(255,255,255,0.95);
+  color: rgb(16, 46, 10);
+  text-align: left;
+  font-size: 15px; 
+}
+
+/* typing caret for AssistantMessage */
+.typing-caret {
+  display: inline-block;
+  width: 8px;
+  height: 18px;
+  margin-left: 6px;
+  background: linear-gradient(180deg, #0b7a4a 0%, #7cc700 100%);
+  border-radius: 2px;
+  animation: blink 1s infinite steps(2, start);
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* scroll area: small visual padding at bottom so last message isn't flush against input */
+.chatbot-messages::after {
+  content: '';
+  display: block;
+  height: 80px;
+}
+
+/* metadata shown under assistant messages (model, difficulty, category) */
+.message-meta {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: #4b5563; /* cool gray */
+  font-size: 9px;
+}
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(11,122,74,0.04);
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+.meta-icon { font-size: 14px; margin-right: 4px }
+
+/* small screens tweaks */
+@media (max-width: 520px) {
+  .chatbot-message { max-width: 86%; font-size: 14px; }
+  .chatbot-messages { padding: 0.75rem; }
+}
